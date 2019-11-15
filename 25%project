@@ -1,0 +1,10 @@
+select charge as "Repair Charge", cellphone as "Repair Customer ID", bike_id as "Repair Bike Id", date_in as "Date Repair ID", date_out as "Date Repair Out"
+
+from repair
+
+where not EXISTS
+
+(select purchase_id from purchase where 
+
+purchase.cellphone = repair.cellphone);
+---------------------------------------------------------------------------------------------------------------------------------------------
